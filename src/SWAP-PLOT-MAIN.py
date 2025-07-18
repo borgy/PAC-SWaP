@@ -38,7 +38,7 @@ import base64
 import copy
 
 # Import SWAP data into a pandas DataFrame
-csv_file = 'SWAP_DATA.csv'
+csv_file = '../data/SWAP_DATA.csv'
 df = pd.read_csv(csv_file)
 
 # Filter the DataFrame to include only rows where INCLUDE == 1
@@ -319,7 +319,7 @@ fig.add_annotation(
 
 # QR code image that links to source data on IPAS page
 # with open("IPAS-QR.png", "rb") as image_file:
-with open("IPAS-QR-bitly.png", "rb") as image_file:
+with open("../images/IPAS-QR-bitly.png", "rb") as image_file:
     base64_image = base64.b64encode(image_file.read()).decode('utf-8')
 
 # Add the QR code image to the plot
@@ -366,7 +366,7 @@ config = {
 }
 
 # Export to an HTML file with the config
-pio.write_html(fig, 'SWAP-PLOT-MAIN.html', config=config)
+pio.write_html(fig, '../web/SWAP-PLOT-MAIN.html', config=config)
 
 
 
@@ -457,4 +457,4 @@ config2 = {
 
 
 # write html file for focused plot
-pio.write_html(fig2, 'SWAP-PLOT-FOCUS.html', config=config2)
+pio.write_html(fig2, '../web/SWAP-PLOT-FOCUS.html', config=config2)
